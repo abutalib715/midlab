@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int i,j,N;
+    int a[100];
+    int b[100];
+    
+    scanf("%d",&N);
+    for(i=0;i<N;i++)
+        scanf("%d ",&a[i]);
+    
+    for(i=0;i<N;i++){
+        j=i-1;
+        while(a[i]<b[j] && j>=0){
+            b[j+1]=b[j];
+            j--;
+        }
+        b[j+1]=a[i];
+    }
+    
+    for(i=0;i<N;i++)
+        printf("%d ",b[i]);
+    
+    return 0;
+}
